@@ -9,11 +9,33 @@
 <body>
     <div class="app-container">
         <header><h1>ძებნა 🔍</h1></header>
-        <input type="text" placeholder="მოძებნე წიგნი ან ვიდეო..." 
-               style="width:100%; padding:15px; border-radius:15px; border:none; background:#1c1c1e; color:white; font-size:16px;">
         
-        <div style="margin-top:30px; color:gray; text-align:center;">
-            <p>პოპულარული ძიებები: "ლოცვა", "ბიბლია", "რწმენა"</p>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="მოძებნე წიგნი ან ვიდეო..." 
+                   style="width:100%; padding:15px; border-radius:15px; border:none; background:#1c1c1e; color:white; font-size:16px; outline: none; border: 1px solid #333;">
+        </div>
+        
+        <div style="margin-top:20px;">
+            <p id="resultCount" style="color: gray; font-size: 14px; margin-bottom: 15px;">ნაპოვნია 4 ელემენტი</p>
+            
+            <div class="new-grid" id="searchGrid">
+                <div class="grid-item" data-name="მარადიულობა">
+                    <img src="https://picsum.photos/id/24/200/300" alt="Book">
+                    <p>მარადიულობა</p>
+                </div>
+                <div class="grid-item" data-name="რწმენის გზა">
+                    <img src="https://picsum.photos/id/20/200/300" alt="Book">
+                    <p>რწმენის გზა</p>
+                </div>
+                <div class="grid-item" data-name="ლოცვა">
+                    <img src="https://picsum.photos/id/26/200/300" alt="Book">
+                    <p>ლოცვა</p>
+                </div>
+                <div class="grid-item" data-name="ბიბლია">
+                    <img src="https://picsum.photos/id/29/200/300" alt="Book">
+                    <p>ბიბლია</p>
+                </div>
+            </div>
         </div>
 
         <nav class="bottom-nav">
@@ -24,5 +46,6 @@
             <a href="menu.html" class="nav-item">☰</a>
         </nav>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

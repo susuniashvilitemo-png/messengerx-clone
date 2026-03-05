@@ -1,30 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // კატეგორიების მართვა
-    const btns = document.querySelectorAll('.btn');
-    btns.forEach(btn => {
+    const searchInput = document.getElementById('searchInput');
+    const searchGrid = document.getElementById('searchGrid');
+    const resultCount = document.getElementById('resultCount');
+
+    // თუ ძებნის გვერდზე ვართ, მხოლოდ მაშინ იმუშაოს ამ კოდმა
+    if (searchInput) {
+        const items = searchGrid.querySelectorAll('.grid-item');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchText = e.target.value.toLowerCase();
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const itemName = item.getAttribute('data-name').toLowerCase();
+                
+                if (itemName.includes(searchText)) {
+                    item.style.display = "block";
+                    visibleCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            // განვაახლოთ ნაპოვნი ელემენტების რაოდენობა
+            resultCount.innerText = `ნაპოვნია ${visibleCount} ელემენტი`;
+        });
+    }
+
+    // ღილაკების აქტიური სტატუსის ლოგიკა
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
         btn.addEventListener('click', () => {
-            btns.forEach(b => b.classList.remove('active'));
+            buttons.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         });
-    });
-
-    // ნავიგაციის მართვა
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => {
-        item.addEventListener('click', () => {
-            navItems.forEach(n => n.classList.remove('active'));
-            item.classList.add('active');
-        });
-    });
-
-    // ვიდეო ბარათზე დაჭერა
-    const card = document.querySelector('.main-card');
-    card.addEventListener('click', () => {
-        card.style.transform = "scale(0.96)";
-        setTimeout(() => {
-            card.style.transform = "scale(1)";
-            alert("ვიდეო მალე ჩაირთვება! 🚀");
-        }, 100);
     });
 });

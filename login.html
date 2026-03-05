@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - MessengerX</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+        .login-container { text-align: center; width: 100%; max-width: 350px; padding: 20px; }
+        .big-logo { font-size: 80px; font-weight: 800; background: linear-gradient(135deg, #7c4dff, #ba62f8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+        .login-btn { width: 100%; padding: 16px; border-radius: 12px; border: none; font-size: 16px; font-weight: 600; margin-bottom: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.2s; }
+        .btn-primary { background: #5856d6; color: white; }
+        .btn-outline { background: #1c1c1e; color: white; border: 1px solid #333; }
+        .guest-link { color: #8e8e93; text-decoration: none; display: block; margin-top: 20px; font-size: 15px; }
+        .privacy-box { margin-top: 40px; background: #1c1c1e; padding: 15px; border-radius: 12px; text-align: left; font-size: 13px; color: #8e8e93; border: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="big-logo">X</div>
+        <h2 style="margin-bottom: 30px;">Welcome to MessengerX</h2>
+
+        <button class="login-btn btn-primary" onclick="goToHome()">Continue with Email</button>
+        <button class="login-btn btn-outline" onclick="goToHome()">🍎 Continue with Apple</button>
+        <button class="login-btn btn-outline" onclick="goToHome()">🌐 Continue with Google</button>
+
+        <a href="#" class="guest-link" onclick="goToHome()">or Continue as guest</a>
+
+        <div class="privacy-box">
+            <input type="checkbox" checked> Improve your experience by allowing us to send diagnostics...
+        </div>
+        
+        <p style="margin-top: 30px; font-size: 12px; color: gray;">By using this app, you agree to the Privacy Policy</p>
+    </div>
+
+    <script>
+        function goToHome() {
+            window.location.href = "index.html"; // გადადის მთავარ გვერდზე
+        }
+    </script>
+</body>
+</html>
